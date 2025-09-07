@@ -341,11 +341,13 @@
       <div>
         <h2>Contáctenos</h2>
         <p class="lead">Cuéntenos sobre su proyecto (área, especie, cronograma) y le responderemos con disponibilidad y una cotización.</p>
-        <form class="contact-form" onsubmit="event.preventDefault(); alert('¡Gracias! Enviaremos respuesta pronto.');">
-          <label>Nombre<input required name="nombre" placeholder="Nombre completo" style="width:100%;margin-top:6px" class="card"></label>
+        <form id="contact-form" class="contact-form" action="https://formsubmit.co/lvasquezb@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="Nuevo mensaje desde el sitio web">
+          <input type="hidden" name="_captcha" value="false">
+          <label>Nombre<input required name="nombre" placeholder="Nombre completo" style="width:100%;margin-top:6px" class="card" minlength="2" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" title="Solo letras y espacios"></label>
           <label>Email<input required type="email" name="email" placeholder="correo@empresa.com" style="width:100%;margin-top:6px" class="card"></label>
-          <label>Teléfono / WhatsApp<input name="tel" placeholder="Código de país + número" style="width:100%;margin-top:6px" class="card"></label>
-          <label>País<select name="pais" style="width:100%;margin-top:6px" class="card">
+          <label>Teléfono / WhatsApp<input required name="tel" placeholder="Código de país + número" style="width:100%;margin-top:6px" class="card" pattern="\+?[0-9\s-]{7,15}" title="Ingrese un número válido"></label>
+          <label>País<select required name="pais" style="width:100%;margin-top:6px" class="card">
             <option value="" selected disabled>Seleccione su país</option>
             <option value="Argentina">Argentina</option>
             <option value="Bolivia">Bolivia</option>
@@ -373,7 +375,7 @@
             <option value="Venezuela">Venezuela</option>
             <option value="Otro">Otro</option>
           </select></label>
-          <label style="grid-column:1 / -1">Mensaje<textarea name="mensaje" placeholder="¿Qué semillas necesita? ¿Para cuándo?" rows="6" style="width:100%;margin-top:6px" class="card"></textarea></label>
+          <label style="grid-column:1 / -1">Mensaje<textarea required name="mensaje" placeholder="¿Qué semillas necesita? ¿Para cuándo?" rows="6" style="width:100%;margin-top:6px" class="card" minlength="10"></textarea></label>
           <button class="btn cta" style="grid-column:1 / -1;font-size:1.1rem" type="submit">Enviar mensaje</button>
           <small class="muted" style="grid-column:1 / -1">Al enviar, acepta ser contactado(a) para fines comerciales. Nunca compartimos su información.</small>
         </form>
@@ -441,6 +443,32 @@
     });
     lightbox.addEventListener('click', () => {
       lightbox.setAttribute('hidden','');
+    });
+
+    // Envío del formulario de contacto
+    const contactForm = document.getElementById('contact-form');
+    contactForm?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!contactForm.checkValidity()) {
+        contactForm.reportValidity();
+        return;
+      }
+      const data = new FormData(contactForm);
+      try {
+        const resp = await fetch(contactForm.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+        if (resp.ok) {
+          alert('¡Gracias! Enviaremos respuesta pronto.');
+          contactForm.reset();
+        } else {
+          alert('Hubo un error al enviar el mensaje. Intente de nuevo.');
+        }
+      } catch {
+        alert('Hubo un error al enviar el mensaje. Intente de nuevo.');
+      }
     });
   </script>
 
