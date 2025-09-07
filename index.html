@@ -345,7 +345,34 @@
           <label>Nombre<input required name="nombre" placeholder="Nombre completo" style="width:100%;margin-top:6px" class="card"></label>
           <label>Email<input required type="email" name="email" placeholder="correo@empresa.com" style="width:100%;margin-top:6px" class="card"></label>
           <label>Teléfono / WhatsApp<input name="tel" placeholder="Código de país + número" style="width:100%;margin-top:6px" class="card"></label>
-          <label>País<input name="pais" placeholder="Costa Rica" style="width:100%;margin-top:6px" class="card"></label>
+          <label>País<select name="pais" style="width:100%;margin-top:6px" class="card">
+            <option value="" selected disabled>Seleccione su país</option>
+            <option value="Argentina">Argentina</option>
+            <option value="Bolivia">Bolivia</option>
+            <option value="Brasil">Brasil</option>
+            <option value="Chile">Chile</option>
+            <option value="Colombia">Colombia</option>
+            <option value="Costa Rica">Costa Rica</option>
+            <option value="Cuba">Cuba</option>
+            <option value="Ecuador">Ecuador</option>
+            <option value="El Salvador">El Salvador</option>
+            <option value="España">España</option>
+            <option value="Estados Unidos">Estados Unidos</option>
+            <option value="Guatemala">Guatemala</option>
+            <option value="Haití">Haití</option>
+            <option value="Honduras">Honduras</option>
+            <option value="Jamaica">Jamaica</option>
+            <option value="México">México</option>
+            <option value="Nicaragua">Nicaragua</option>
+            <option value="Panamá">Panamá</option>
+            <option value="Paraguay">Paraguay</option>
+            <option value="Perú">Perú</option>
+            <option value="Puerto Rico">Puerto Rico</option>
+            <option value="República Dominicana">República Dominicana</option>
+            <option value="Uruguay">Uruguay</option>
+            <option value="Venezuela">Venezuela</option>
+            <option value="Otro">Otro</option>
+          </select></label>
           <label style="grid-column:1 / -1">Mensaje<textarea name="mensaje" placeholder="¿Qué semillas necesita? ¿Para cuándo?" rows="6" style="width:100%;margin-top:6px" class="card"></textarea></label>
           <button class="btn cta" style="grid-column:1 / -1;font-size:1.1rem" type="submit">Enviar mensaje</button>
           <small class="muted" style="grid-column:1 / -1">Al enviar, acepta ser contactado(a) para fines comerciales. Nunca compartimos su información.</small>
