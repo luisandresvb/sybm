@@ -196,7 +196,7 @@
         <div class="grid grid-3">
           <!-- Teca -->
           <article class="card">
-            <img src="img/Frutos%20teca%20recien%20escarificados.jpg" alt="Frutos de teca escarificados" loading="lazy" style="border-radius:12px"/>
+            <img src="img/Frutos%20teca%20recien%20escarificados.jpg" alt="Frutos de teca escarificados" loading="lazy" style="border-radius:12px;object-fit:cover;aspect-ratio:16/9;border:1px solid #e2e8f0"/>
             <h3 style="margin:12px 0 4px">Semilla certificada de Teca</h3>
             <p class="muted" style="margin:0 0 8px;font-size:.95rem">Fuentes certificadas (RS/HS) con adaptación a distintos rangos de precipitación y altitud. Opciones escarificadas y listas para siembra.</p>
             <ul class="list" style="margin-top:8px">
@@ -220,7 +220,7 @@
 
           <!-- Otras especies (imagen genérica) -->
           <article class="card">
-            <img src="img/Arbol%20plus%20de%20pochote%20(B.quinata).jpg" alt="Árbol plus de pochote" loading="lazy" style="border-radius:12px"/>
+            <img src="img/Arbol%20plus%20de%20pochote%20(B.quinata).jpg" alt="Árbol plus de pochote" loading="lazy" style="border-radius:12px;object-fit:cover;aspect-ratio:16/9;border:1px solid #e2e8f0"/>
             <h3 style="margin:12px 0 4px">Otras especies contra pedido</h3>
             <p class="muted" style="margin:0 0 8px;font-size:.95rem">Ejemplos de especies frecuentemente solicitadas. La lista completa puede integrarse vía CSV/Google Sheets.</p>
             <table>
@@ -343,7 +343,7 @@
         <form class="contact-form" onsubmit="event.preventDefault(); alert('¡Gracias! Enviaremos respuesta pronto.');">
           <label>Nombre<input required name="nombre" placeholder="Nombre completo" style="width:100%;margin-top:6px" class="card"></label>
           <label>Email<input required type="email" name="email" placeholder="correo@empresa.com" style="width:100%;margin-top:6px" class="card"></label>
-          <label>Teléfono / WhatsApp<input name="tel" placeholder="+506…" style="width:100%;margin-top:6px" class="card"></label>
+          <label>Teléfono / WhatsApp<input name="tel" placeholder="Código de país + número" style="width:100%;margin-top:6px" class="card"></label>
           <label>País<input name="pais" placeholder="Costa Rica" style="width:100%;margin-top:6px" class="card"></label>
           <label style="grid-column:1 / -1">Mensaje<textarea name="mensaje" placeholder="¿Qué semillas necesita? ¿Para cuándo?" rows="6" style="width:100%;margin-top:6px" class="card"></textarea></label>
           <button class="btn cta" style="grid-column:1 / -1" type="submit">Enviar mensaje</button>
