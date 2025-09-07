@@ -38,6 +38,7 @@
     h2{font-size:clamp(1.6rem,2.2vw,2.4rem);margin:0}
     p.lead{font-size:1.125rem;color:var(--muted)}
     .grid{display:grid;gap:24px}
+    .grid> *{min-width:0}
     .grid-2{grid-template-columns:1fr}
     .grid-3{grid-template-columns:1fr}
     @media(min-width:960px){.grid-2{grid-template-columns:1.1fr .9fr}.grid-3{grid-template-columns:repeat(3,1fr)}}
@@ -62,8 +63,8 @@
     .list li{display:flex;gap:10px}
     .icon{width:20px;height:20px;color:var(--brand)}
 
-    table{width:100%;border-collapse:collapse;font-size:.95rem}
-    th,td{padding:10px 12px;text-align:left}
+    table{width:100%;border-collapse:collapse;font-size:.95rem;table-layout:fixed}
+    th,td{padding:10px 12px;text-align:left;word-break:break-word}
     thead th{color:#64748b}
     tbody tr{border-top:1px solid #e2e8f0}
     tbody tr:hover{background:#f8fafc}
@@ -143,8 +144,8 @@
         <h1>Más de <span style="color:var(--brand)">20 años</span> reforestando el mundo</h1>
         <p class="lead">Semilla mejorada y certificada desde Costa Rica. Especialistas en <strong>teca (Tectona grandis)</strong> y <strong>melina (Gmelina arborea)</strong>, con respaldo técnico y logística internacional.</p>
         <div class="stack" style="margin-top:16px">
-          <a class="btn cta" href="#semillas">Ver semillas</a>
-          <a class="btn btn-outline" href="#contacto">Contáctenos</a>
+          <a class="btn cta" href="#contacto">Contáctenos</a>
+          <a class="btn btn-outline" href="#semillas">Ver semillas</a>
         </div>
         <div class="badges">
           <span class="badge">Calidad física (CIGRAS)</span>
