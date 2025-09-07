@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Semillas y Bosques Mejorados S.A. — Semilla certificada de Teca y Melina</title>
+  <meta name="description" content="Semilla forestal mejorada y certificada. Especialistas en teca (Tectona grandis) y melina (Gmelina arborea). Asesoría técnica, calidad y logística internacional desde Costa Rica." />
+  <meta name="theme-color" content="#10b981" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #ffffff; --fg: #0f172a; --muted:#475569; --brand:#10b981; --brand-2:#84cc16; --ring:#a7f3d0; --card:#f8fafc;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;color:var(--fg);background:var(--bg);}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{max-width:1152px;margin:0 auto;padding:0 20px}
+    /* Header */
+    .header{position:sticky;top:0;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid #e2e8f0;z-index:100}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand-mark{width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--brand-2));box-shadow:0 1px 3px rgba(16,24,40,.1)}
+    .nav-links{display:none;gap:20px;align-items:center}
+    .cta{background:var(--brand);color:#fff;padding:.6rem 1rem;border-radius:12px;font-weight:600;box-shadow:0 1px 2px rgba(16,24,40,.1)}
+    .cta:hover{filter:brightness(.95)}
+    .menu-btn{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid #e2e8f0;border-radius:12px;background:#fff}
+    @media(min-width:768px){.nav-links{display:flex}.menu-btn{display:none}}
+
+    /* Sections */
+    section{padding:72px 0}
+    .section-muted{background:#f8fafc;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0}
+    h1,h2{letter-spacing:-.02em}
+    h1{font-size:clamp(2rem,3.5vw,3.5rem);line-height:1.1;margin:0}
+    h2{font-size:clamp(1.6rem,2.2vw,2.4rem);margin:0}
+    p.lead{font-size:1.125rem;color:var(--muted)}
+    .grid{display:grid;gap:24px}
+    .grid-2{grid-template-columns:1fr}
+    .grid-3{grid-template-columns:1fr}
+    @media(min-width:960px){.grid-2{grid-template-columns:1.1fr .9fr}.grid-3{grid-template-columns:repeat(3,1fr)}}
+
+    /* Cards / Tables */
+    .card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:20px;box-shadow:0 1px 2px rgba(16,24,40,.04)}
+    .hero-visual{position:relative;border-radius:24px;overflow:hidden;border:1px solid #e2e8f0;background:linear-gradient(180deg,#ecfdf5,transparent)}
+    .hero-visual .cap{position:absolute;bottom:16px;left:16px;right:16px;background:rgba(255,255,255,.9);border:1px solid #e2e8f0;border-radius:12px;padding:12px;font-size:.9rem;color:#334155}
+    .badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+    .badge{font-size:.75rem;padding:6px 10px;border-radius:999px;border:1px solid #bbf7d0;background:#ecfdf5}
+
+    .list{display:grid;gap:14px;margin:18px 0 0}
+    .list li{display:flex;gap:10px}
+    .icon{width:20px;height:20px;color:var(--brand)}
+
+    table{width:100%;border-collapse:collapse;font-size:.95rem}
+    th,td{padding:10px 12px;text-align:left}
+    thead th{color:#64748b}
+    tbody tr{border-top:1px solid #e2e8f0}
+    tbody tr:hover{background:#f8fafc}
+
+    /* Gallery */
+    .gallery{display:grid;gap:14px;grid-template-columns:1fr 1fr}
+    @media(min-width:900px){.gallery{grid-template-columns:repeat(3,1fr)}}
+    .gallery figure{overflow:hidden;border-radius:16px;border:1px solid #e2e8f0;background:#fff;box-shadow:0 1px 2px rgba(16,24,40,.04)}
+    .gallery img{aspect-ratio:4/3;object-fit:cover;transition:transform .35s ease}
+    .gallery figure:hover img{transform:scale(1.04)}
+    .gallery figcaption{padding:8px 10px;font-size:.8rem;color:#475569}
+
+    /* Footer */
+    footer{border-top:1px solid #e2e8f0;background:#fff}
+    .footer{display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:space-between}
+    @media(min-width:768px){.footer{flex-direction:row}}
+
+    /* Utility */
+    .muted{color:#64748b}
+    .btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;border-radius:14px;padding:.8rem 1rem}
+    .btn-outline{border:1px solid #e2e8f0;background:#fff}
+    .stack{display:flex;gap:10px;flex-wrap:wrap}
+      .brand-logo{width:36px;height:36px;border-radius:12px;object-fit:contain;background:#fff;border:1px solid #e2e8f0;padding:2px}
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav">
+      <a href="#" class="brand" aria-label="Inicio">
+        <img class="brand-logo" src="img/Logo-SBM.png" alt="Logo Semillas y Bosques" onerror="this.onerror=()=>{this.src='https://semillasybosques.com/favicon.ico'}; this.src='https://semillasybosques.com/logo.png';"/>
+        <span>
+          <strong>Semillas y Bosques</strong>
+          <div class="muted" style="font-size:.8rem">Mejorados S.A.</div>
+        </span>
+      </a>
+      <nav class="nav-links" id="nav-links">
+        <a href="#nosotros">Nosotros</a>
+        <a href="#semillas">Semillas</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#calidad">Certificación</a>
+        <a href="#docs">Documentos</a>
+        <a href="#galeria">Galería</a>
+        <a href="#contacto" class="cta">Solicitar cotización</a>
+      </nav>
+      <button class="menu-btn" id="menu-btn" aria-label="Abrir menú" aria-controls="mobile" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobile" hidden>
+      <div class="container" style="padding-bottom:12px">
+        <div class="stack">
+          <a href="#nosotros">Nosotros</a>
+          <a href="#semillas">Semillas</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#calidad">Certificación</a>
+          <a href="#docs">Documentos</a>
+          <a href="#galeria">Galería</a>
+          <a href="#contacto" class="cta">Solicitar cotización</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container grid grid-2" style="align-items:center">
+      <div>
+        <h1>Más de <span style="color:var(--brand)">20 años</span> reforestando el mundo</h1>
+        <p class="lead">Semilla mejorada y certificada desde Costa Rica. Especialistas en <strong>teca (Tectona grandis)</strong> y <strong>melina (Gmelina arborea)</strong>, con respaldo técnico y logística internacional.</p>
+        <div class="stack" style="margin-top:16px">
+          <a class="btn cta" href="#semillas">Ver semillas</a>
+          <a class="btn btn-outline" href="#contacto">Contáctenos</a>
+        </div>
+        <div class="badges">
+          <span class="badge">Calidad física (CIGRAS)</span>
+          <span class="badge">Certificación ONS</span>
+          <span class="badge">Exportación 2–5 días*</span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <!-- Imagen sugerida: árbol plus de teca en plantación -->
+        <img src="img/Arbol%20plus%20de%20teca%20en%20plantacion%20de%20Colombia.jpg" alt="Árbol plus de teca en plantación" loading="lazy" />
+        <div class="cap">Semillas certificadas, resultados predecibles: pureza, % de germinación y peso de mil semillas verificados. Asesoría para maximizar plantas útiles por kilo.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nosotros -->
+  <section id="nosotros">
+    <div class="container grid grid-2" style="align-items:center">
+      <div>
+        <h2>¿Quiénes somos?</h2>
+        <p class="lead">Empresa costarricense dedicada a suministrar semilla forestal mejorada y certificada. Desde 2002 acompañamos a empresarios forestales y viveros con abastecimiento confiable, soporte técnico y procesos de calidad auditados.</p>
+        <ul class="list">
+          <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Selección rigurosa de fuentes RS y HS.</li>
+          <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Pruebas de calidad física en laboratorio acreditado.</li>
+          <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Logística de exportación y documentación completa.</li>
+        </ul>
+      </div>
+      <div class="grid" style="grid-template-columns:1fr 1fr;gap:14px">
+        <img src="img/Arbol%20clonal%20de%20teca.jpg" alt="Árbol clonal de teca" loading="lazy" style="border-radius:16px;border:1px solid #e2e8f0"/>
+        <img src="img/Rodal%20Semillero%20Teca%20%20Jicaral,%20Guanacaste.jpg" alt="Rodal semillero de teca" loading="lazy" style="border-radius:16px;border:1px solid #e2e8f0"/>
+        <img src="img/Semilla%20escarificada%20y%20sin%20escarificar.JPG" alt="Semilla escarificada y sin escarificar" loading="lazy" style="border-radius:16px;border:1px solid #e2e8f0"/>
+        <img src="img/Teca%20Germinando%20en%20San%20Carlos,%20Costa%20Rica%203%20kilospor%20metro.jpg" alt="Teca germinando en bandejas" loading="lazy" style="border-radius:16px;border:1px solid #e2e8f0"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- Semillas -->
+  <section id="semillas" class="section-muted">
+    <div class="container">
+      <div class="grid" style="grid-template-columns:1fr auto;align-items:end">
+        <div>
+          <h2>Semillas forestales</h2>
+          <p class="lead">Disponibilidad regular de teca y melina; otras especies contra pedido. Asesoramos sobre especies según sitio y objetivos del proyecto.</p>
+        </div>
+        <a class="btn cta" href="#contacto">Solicitar disponibilidad</a>
+      </div>
+
+      <div class="grid" style="grid-template-columns:1fr;gap:24px;margin-top:20px">
+        <div class="grid grid-3">
+          <!-- Teca -->
+          <article class="card">
+            <img src="img/Frutos%20teca%20recien%20escarificados.jpg" alt="Frutos de teca escarificados" loading="lazy" style="border-radius:12px"/>
+            <h3 style="margin:12px 0 4px">Semilla certificada de Teca</h3>
+            <p class="muted" style="margin:0 0 8px;font-size:.95rem">Fuentes certificadas (RS/HS) con adaptación a distintos rangos de precipitación y altitud. Opciones escarificadas y listas para siembra.</p>
+            <ul class="list" style="margin-top:8px">
+              <li>Calidad física verificada (pureza, % germinación, PMS).</li>
+              <li>Estimación de plantas útiles por kilo.</li>
+              <li>Protocolos de pre-germinación disponibles.</li>
+            </ul>
+          </article>
+
+          <!-- Melina -->
+          <article class="card">
+            <img src="img/Semilla%20de%20Gmelina%20arborea.jpg" alt="Semillas melina" loading="lazy" style="border-radius:12px;object-fit:cover;aspect-ratio:16/9;border:1px solid #e2e8f0"/>
+            <h3 style="margin:12px 0 4px">Semilla certificada de Melina</h3>
+            <p class="muted" style="margin:0 0 8px;font-size:.95rem">Lotes con incremento de germinación tras almacenamiento controlado (1–2 años). Suministro constante para programas de reforestación comercial.</p>
+            <ul class="list" style="margin-top:8px">
+              <li>Calidad genética respaldada por ONS.</li>
+              <li>Asesoría en viverización y manejo.</li>
+              <li>Entrega internacional 2–5 días hábiles*</li>
+            </ul>
+          </article>
+
+          <!-- Otras especies (imagen genérica) -->
+          <article class="card">
+            <img src="img/Arbol%20plus%20de%20pochote%20(B.quinata).jpg" alt="Árbol plus de pochote" loading="lazy" style="border-radius:12px"/>
+            <h3 style="margin:12px 0 4px">Otras especies contra pedido</h3>
+            <p class="muted" style="margin:0 0 8px;font-size:.95rem">Ejemplos de especies frecuentemente solicitadas. La lista completa puede integrarse vía CSV/Google Sheets.</p>
+            <table>
+              <thead><tr><th>Nombre común</th><th>Nombre científico</th><th>Tipo fuente</th><th>Semillas/kg*</th></tr></thead>
+              <tbody>
+                <tr><td>Acacia</td><td><em>Acacia mangium</em></td><td>FI/FS</td><td>~74.700</td></tr>
+                <tr><td>Cedro rosado</td><td><em>Acrocarpus fraxinifolius</em></td><td>FI/FS</td><td>—</td></tr>
+                <tr><td>Pochote</td><td><em>Bombacopsis quinata</em></td><td>FI/FS</td><td>—</td></tr>
+                <tr><td>Laurel</td><td><em>Cordia alliodora</em></td><td>FI/FS</td><td>—</td></tr>
+              </tbody>
+            </table>
+            <p class="muted" style="font-size:.8rem;margin-top:8px">* Valores referenciales. Solicite ficha técnica del lote.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section id="servicios">
+    <div class="container">
+      <h2>Servicios de asesoría técnica</h2>
+      <p class="lead">Acompañamiento integral desde la planificación hasta la producción en vivero.</p>
+      <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px">
+        <div class="card"><strong>Selección de tierras</strong><p class="muted">Evaluación de suelos, clima y accesos para maximizar productividad.</p></div>
+        <div class="card"><strong>Selección de especies</strong><p class="muted">Recomendaciones según sitio, mercado y rotación.</p></div>
+        <div class="card"><strong>Protocolos de siembra</strong><p class="muted">Tratamientos de pre-germinación, viverización y manejo.</p></div>
+        <div class="card"><strong>Calidad de semilla</strong><p class="muted">Interpretación de pruebas (CIGRAS/ONS) y control de lotes.</p></div>
+        <div class="card"><strong>Logística y exportación</strong><p class="muted">Documentación y envíos internacionales eficientes.</p></div>
+        <div class="card"><strong>Capacitación in situ</strong><p class="muted">Talleres para personal de campo y vivero.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certificación y calidad -->
+  <section id="calidad" class="section-muted">
+    <div class="container grid grid-2" style="align-items:start">
+      <div>
+        <h2>Certificación & calidad</h2>
+        <p class="lead">Trabajamos con <strong>Fuentes Semilleras</strong> clasificadas y auditadas. La calidad genética proviene de categorías superiores: <strong>Rodal Semillero (RS)</strong> y <strong>Huerto Semillero (HS)</strong>. La calidad física se verifica en laboratorio (contenido de humedad, pureza, peso de mil semillas y % de germinación).</p>
+        <ul class="list">
+          <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>Muestreo y respaldo de lotes.</li>
+          <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>Trazabilidad desde la fuente semillera.</li>
+          <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>Fichas técnicas por especie y lote.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <strong>Categorías de Fuentes Semilleras</strong>
+        <ol style="margin:8px 0 0 18px">
+          <li>Fuentes Identificadas (FI)</li>
+          <li>Fuentes Seleccionadas (FS)</li>
+          <li><strong>Rodales Semilleros (RS)</strong> — Certificada C</li>
+          <li><strong>Huertos Semilleros (HS)</strong> — Certificada A o B</li>
+        </ol>
+        <div class="grid" style="grid-template-columns:1fr 1fr;gap:12px;margin-top:12px">
+          <div class="card" style="padding:14px"><strong>Laboratorio</strong><p class="muted" style="margin:6px 0 0">Ensayos oficiales, informes y respaldo de muestras.</p></div>
+          <div class="card" style="padding:14px"><strong>Almacenaje</strong><p class="muted" style="margin:6px 0 0">Cámaras frías y control de humedad.</p></div>
+        </div>
+        <p class="muted" style="font-size:.85rem;margin-top:8px">* La melina y la teca suelen mejorar su germinación tras 1–2 años de almacenamiento controlado.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Documentos -->
+  <section id="docs">
+    <div class="container">
+      <h2>Centro de documentación</h2>
+      <p class="lead">Protocolos y guías técnicas para maximizar la productividad de su proyecto.</p>
+      <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px">
+        <a class="card" href="https://semillasybosques.com/doc/Protocolo-de-teca-S%26BM-2009.pdf" target="_blank" rel="noreferrer noopener">
+          <strong>Protocolo de Teca (S&BM)</strong>
+          <div class="muted" style="font-size:.85rem">PDF</div>
+        </a>
+        <a class="card" href="https://www.semillasybosques.com/doc/Protocolo-melina-S%26BM-2009.pdf" target="_blank" rel="noreferrer noopener">
+          <strong>Protocolo de Melina (S&BM)</strong>
+          <div class="muted" style="font-size:.85rem">PDF</div>
+        </a>
+        <a class="card" href="https://semillasybosques.com/doc/GUIA_TECNICA_PARA_LA_PRODUCCION_DE_SEMILLA_FORESTAL_CERTIFICADA_Y_AUTORIZADA.pdf" target="_blank" rel="noreferrer noopener">
+          <strong>Guía ONS — Semilla Forestal Certificada/Autorizada</strong>
+          <div class="muted" style="font-size:.85rem">PDF</div>
+        </a>
+        <a class="card" href="https://semillasybosques.com/documentos/Seed-Catalogue.pdf" target="_blank" rel="noreferrer noopener">
+          <strong>Seed Catalogue (EN)</strong>
+          <div class="muted" style="font-size:.85rem">PDF</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galería -->
+  <section id="galeria" class="section-muted">
+    <div class="container">
+      <div class="grid" style="grid-template-columns:1fr auto;align-items:end">
+        <div>
+          <h2>Galería</h2>
+          <p class="lead">Fuentes semilleras, procesamiento, viveros y plantaciones.</p>
+        </div>
+        <a class="btn btn-outline" href="#contacto">Necesito una cotización</a>
+      </div>
+      <div class="gallery" style="margin-top:16px">
+        <figure><img src="img/Flor%20de%20teca.jpg" alt="Flor de teca" loading="lazy"><figcaption>Flor de teca</figcaption></figure>
+        <figure><img src="img/Avispa%20no%20identificada%20polinizando%20teca%20en%20Huerto%20Semillero.jpg" alt="Avispa polinizando teca" loading="lazy"><figcaption>Polinización</figcaption></figure>
+        <figure><img src="img/Racimo%20floral%20y%20flores%20de%20teca.jpg" alt="Racimo floral de teca" loading="lazy"><figcaption>Racimo floral</figcaption></figure>
+        <figure><img src="img/Huerto%20Semillero%20Pinus%20caribaea%20var%20caribaea%20Cuba,%202008..jpg" alt="Huerto Semillero Pinus caribaea" loading="lazy"><figcaption>Huerto Semillero</figcaption></figure>
+        <figure><img src="img/Camara%20Almacenaje%205%20grados%20Problema%20del%20CH.JPG" alt="Cámara de almacenaje" loading="lazy"><figcaption>Almacenaje</figcaption></figure>
+        <figure><img src="img/Evaluacion%20Fuente%20Semillera%20teca%20en%20Colombia.jpg" alt="Evaluación de fuente semillera" loading="lazy"><figcaption>Evaluación</figcaption></figure>
+        <figure><img src="img/Arbol%20plus%20de%20teca%20en%20plantacion%20de%20Colombia.jpg" alt="Árbol plus de teca" loading="lazy"><figcaption>Árbol plus</figcaption></figure>
+        <figure><img src="img/Rodal%20Semillero%20Urbelino,%20Palo%20Arco.jpg" alt="Rodal semillero" loading="lazy"><figcaption>Rodal semillero</figcaption></figure>
+        <figure><img src="img/Flores%20y%20frutos%20de%20teca.jpg" alt="Flores y frutos de teca" loading="lazy"><figcaption>Flores y frutos</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto">
+    <div class="container grid" style="grid-template-columns:1.3fr .7fr;gap:24px;align-items:start">
+      <div>
+        <h2>Contáctenos</h2>
+        <p class="lead">Cuéntenos sobre su proyecto (área, especie, cronograma) y le responderemos con disponibilidad y una cotización.</p>
+        <form class="grid" style="grid-template-columns:1fr 1fr; gap:12px" onsubmit="event.preventDefault(); alert('¡Gracias! Enviaremos respuesta pronto.');">
+          <label>Nombre<input required name="nombre" placeholder="Nombre completo" style="width:100%;margin-top:6px" class="card"></label>
+          <label>Email<input required type="email" name="email" placeholder="correo@empresa.com" style="width:100%;margin-top:6px" class="card"></label>
+          <label>Teléfono / WhatsApp<input name="tel" placeholder="+506…" style="width:100%;margin-top:6px" class="card"></label>
+          <label>País<input name="pais" placeholder="Costa Rica" style="width:100%;margin-top:6px" class="card"></label>
+          <label style="grid-column:1 / -1">Mensaje<textarea name="mensaje" placeholder="¿Qué semillas necesita? ¿Para cuándo?" rows="6" style="width:100%;margin-top:6px" class="card"></textarea></label>
+          <button class="btn cta" style="grid-column:1 / -1" type="submit">Enviar mensaje</button>
+          <small class="muted" style="grid-column:1 / -1">Al enviar, acepta ser contactado(a) para fines comerciales. Nunca compartimos su información.</small>
+        </form>
+      </div>
+      <aside class="grid" style="gap:12px">
+        <div class="card">
+          <strong>Datos de contacto</strong>
+          <ul style="margin:8px 0 0; padding-left:16px">
+            <li><strong>Tel:</strong> (+506) 2524-0925</li>
+            <li><strong>Móvil:</strong> (+506) 8868-7842</li>
+            <li><strong>Email:</strong> info@semillasybosques.com</li>
+            <li><strong>Dirección:</strong> San Pedro de Montes de Oca, San José, Costa Rica</li>
+          </ul>
+          <div class="stack" style="margin-top:12px">
+            <a class="btn btn-outline" href="https://www.facebook.com/semillasybosques.SA/" target="_blank" rel="noreferrer noopener">Facebook</a>
+            <a class="btn cta" href="https://wa.me/50688687842" target="_blank" rel="noreferrer noopener">WhatsApp</a>
+          </div>
+        </div>
+        <div class="card">
+          <strong>Horario</strong>
+          <p class="muted">Lunes a viernes: 8:00 a.m. – 5:00 p.m. (CST)</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer" style="padding:24px 0">
+      <small class="muted">© <span id="year"></span> Semillas y Bosques Mejorados S.A. Todos los derechos reservados.</small>
+      <nav class="stack">
+        <a href="#nosotros">Nosotros</a>
+        <a href="#semillas">Semillas</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    // Año dinámico
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Menú móvil
+    const btn = document.getElementById('menu-btn');
+    const mobile = document.getElementById('mobile');
+    btn?.addEventListener('click', () => {
+      const open = mobile.hasAttribute('hidden') ? false : true;
+      if (open) { mobile.setAttribute('hidden',''); btn.setAttribute('aria-expanded','false'); }
+      else { mobile.removeAttribute('hidden'); btn.setAttribute('aria-expanded','true'); }
+    });
+  </script>
+
+  <!--
+    📸 Imágenes
+    
+    Uso actual de imágenes:
+      • Logo (hotlink): en el encabezado se carga desde https://semillasybosques.com/wp-content/uploads/logo.png con fallback a https://semillasybosques.com/logo.png y, si falla, a https://semillasybosques.com/favicon.ico.
+      • Hero / portada: Arbol plus de teca en plantacion de Colombia.jpg
+      • Nosotros: Arbol clonal de teca.jpg
+      • Nosotros: Rodal Semillero Teca  Jicaral, Guanacaste.jpg
+      • Nosotros: Semilla escarificada y sin escarificar.JPG
+      • Nosotros: Teca Germinando en San Carlos, Costa Rica 3 kilospor metro.jpg
+      • Semillas (Teca): Frutos teca recien escarificados.jpg
+      • Semillas (Melina): Semilla de Gmelina arborea.jpg
+      • Otras especies: Arbol plus de pochote (B.quinata).jpg
+      • Galería: Flor de teca.jpg
+      • Galería: Avispa no identificada polinizando teca en Huerto Semillero.jpg
+      • Galería: Racimo floral y flores de teca.jpg
+      • Galería: Huerto Semillero Pinus caribaea var caribaea Cuba, 2008..jpg
+      • Galería: Camara Almacenaje 5 grados Problema del CH.JPG
+      • Galería: Evaluacion Fuente Semillera teca en Colombia.jpg
+      • Galería: Rodal Semillero Urbelino, Palo Arco.jpg
+      • Galería: Flores y frutos de teca.jpg
+
+  -->
+</body>
+</html>
