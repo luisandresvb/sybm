@@ -41,6 +41,14 @@
     .grid-3{grid-template-columns:1fr}
     @media(min-width:960px){.grid-2{grid-template-columns:1.1fr .9fr}.grid-3{grid-template-columns:repeat(3,1fr)}}
 
+    .section-head{display:grid;gap:16px}
+    @media(min-width:768px){.section-head{grid-template-columns:1fr auto;align-items:end}}
+    .cards-grid{display:grid;gap:16px;margin-top:16px;grid-template-columns:1fr}
+    @media(min-width:600px){.cards-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:900px){.cards-grid{grid-template-columns:repeat(3,1fr)}}
+    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.8);display:flex;align-items:center;justify-content:center;padding:20px;z-index:200}
+    .lightbox img{max-width:100%;max-height:100%;border-radius:16px}
+
     /* Cards / Tables */
     .card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:20px;box-shadow:0 1px 2px rgba(16,24,40,.04)}
     .hero-visual{position:relative;border-radius:24px;overflow:hidden;border:1px solid #e2e8f0;background:linear-gradient(180deg,#ecfdf5,transparent)}
@@ -174,7 +182,7 @@
   <!-- Semillas -->
   <section id="semillas" class="section-muted">
     <div class="container">
-      <div class="grid" style="grid-template-columns:1fr auto;align-items:end">
+      <div class="section-head">
         <div>
           <h2>Semillas forestales</h2>
           <p class="lead">Disponibilidad regular de teca y melina; otras especies contra pedido. Asesoramos sobre especies según sitio y objetivos del proyecto.</p>
@@ -234,7 +242,7 @@
     <div class="container">
       <h2>Servicios de asesoría técnica</h2>
       <p class="lead">Acompañamiento integral desde la planificación hasta la producción en vivero.</p>
-      <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px">
+      <div class="cards-grid">
         <div class="card"><strong>Selección de tierras</strong><p class="muted">Evaluación de suelos, clima y accesos para maximizar productividad.</p></div>
         <div class="card"><strong>Selección de especies</strong><p class="muted">Recomendaciones según sitio, mercado y rotación.</p></div>
         <div class="card"><strong>Protocolos de siembra</strong><p class="muted">Tratamientos de pre-germinación, viverización y manejo.</p></div>
@@ -279,7 +287,7 @@
     <div class="container">
       <h2>Centro de documentación</h2>
       <p class="lead">Protocolos y guías técnicas para maximizar la productividad de su proyecto.</p>
-      <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px">
+      <div class="cards-grid">
         <a class="card" href="https://semillasybosques.com/doc/Protocolo-de-teca-S%26BM-2009.pdf" target="_blank" rel="noreferrer noopener">
           <strong>Protocolo de Teca (S&BM)</strong>
           <div class="muted" style="font-size:.85rem">PDF</div>
@@ -303,7 +311,7 @@
   <!-- Galería -->
   <section id="galeria" class="section-muted">
     <div class="container">
-      <div class="grid" style="grid-template-columns:1fr auto;align-items:end">
+      <div class="section-head">
         <div>
           <h2>Galería</h2>
           <p class="lead">Fuentes semilleras, procesamiento, viveros y plantaciones.</p>
@@ -375,6 +383,8 @@
     </div>
   </footer>
 
+  <div id="lightbox" class="lightbox" hidden></div>
+
   <script>
     // Año dinámico
     document.getElementById('year').textContent = new Date().getFullYear();
@@ -385,6 +395,19 @@
       const open = mobile.hasAttribute('hidden') ? false : true;
       if (open) { mobile.setAttribute('hidden',''); btn.setAttribute('aria-expanded','false'); }
       else { mobile.removeAttribute('hidden'); btn.setAttribute('aria-expanded','true'); }
+    });
+
+    // Galería popup
+    const lightbox = document.getElementById('lightbox');
+    document.querySelectorAll('.gallery img').forEach(img => {
+      img.style.cursor = 'pointer';
+      img.addEventListener('click', () => {
+        lightbox.innerHTML = `<img src="${img.src}" alt="${img.alt}">`;
+        lightbox.removeAttribute('hidden');
+      });
+    });
+    lightbox.addEventListener('click', () => {
+      lightbox.setAttribute('hidden','');
     });
   </script>
 
