@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Distribuidores — Semillas y Bosques</title>
+  <meta name="description" content="Contactos de distribuidores por país." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#ffffff;--fg:#0f172a;--muted:#475569;--brand:#10b981;--brand-2:#84cc16;--ring:#a7f3d0;--card:#f8fafc;}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;color:var(--fg);background:var(--bg);}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1152px;margin:0 auto;padding:0 20px}
+    .header{position:sticky;top:0;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid #e2e8f0;z-index:100}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand-logo{width:36px;height:36px;border-radius:12px;object-fit:contain;background:#fff;border:1px solid #e2e8f0;padding:2px}
+    .nav-links{display:none;gap:20px;align-items:center}
+    .cta{background:var(--brand);color:#fff;padding:.6rem 1rem;border-radius:12px;font-weight:600;box-shadow:0 1px 2px rgba(16,24,40,.1)}
+    .cta:hover{filter:brightness(.95)}
+    .menu-btn{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid #e2e8f0;border-radius:12px;background:#fff}
+    @media(min-width:768px){.nav-links{display:flex}.menu-btn{display:none}}
+    h1{font-size:clamp(2rem,3.5vw,3.5rem);line-height:1.1;margin:40px 0 20px}
+    .cards-grid{display:grid;gap:16px;margin:20px 0;grid-template-columns:1fr}
+    @media(min-width:600px){.cards-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:900px){.cards-grid{grid-template-columns:repeat(3,1fr)}}
+    .card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:20px;box-shadow:0 1px 2px rgba(16,24,40,.04)}
+    .card h3{margin-top:0}
+    .card p{margin:8px 0}
+    .muted{color:#64748b}
+    .stack{display:flex;gap:10px;flex-wrap:wrap}
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a href="../" class="brand" aria-label="Inicio">
+        <img class="brand-logo" src="../img/Logo-SBM.png" alt="Logo Semillas y Bosques" onerror="this.onerror=()=>{this.src='https://semillasybosques.com/favicon.ico'}; this.src='https://semillasybosques.com/logo.png';"/>
+        <span>
+          <strong>Semillas y Bosques</strong>
+          <div class="muted" style="font-size:.8rem">Mejorados S.A.</div>
+        </span>
+      </a>
+      <nav class="nav-links" id="nav-links">
+        <a href="../index.html#nosotros">Nosotros</a>
+        <a href="../semillas/teca.html">Semillas</a>
+        <a href="../index.html#servicios">Servicios</a>
+        <a href="../index.html#calidad">Certificación</a>
+        <a href="../index.html#docs">Documentos</a>
+        <a href="../index.html#galeria">Galería</a>
+        <a href="../index.html#contacto" class="cta">Solicitar cotización</a>
+      </nav>
+      <button class="menu-btn" id="menu-btn" aria-label="Abrir menú" aria-controls="mobile" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobile" hidden>
+      <div class="container" style="padding-bottom:12px">
+        <div class="stack">
+          <a href="../index.html#nosotros">Nosotros</a>
+          <a href="../semillas/teca.html">Semillas</a>
+          <a href="../index.html#servicios">Servicios</a>
+          <a href="../index.html#calidad">Certificación</a>
+          <a href="../index.html#docs">Documentos</a>
+          <a href="../index.html#galeria">Galería</a>
+          <a href="../index.html#contacto" class="cta">Solicitar cotización</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Distribuidores</h1>
+    <div id="cards" class="cards-grid"></div>
+  </main>
+
+  <script>
+    // Menú móvil
+    const btn = document.getElementById('menu-btn');
+    const mobile = document.getElementById('mobile');
+    btn?.addEventListener('click', () => {
+      const open = mobile.hasAttribute('hidden') ? false : true;
+      if (open) { mobile.setAttribute('hidden',''); btn.setAttribute('aria-expanded','false'); }
+      else { mobile.removeAttribute('hidden'); btn.setAttribute('aria-expanded','true'); }
+    });
+
+    // Cargar distribuidores
+    fetch('../data/distribuidores.json')
+      .then(r => r.json())
+      .then(distribuidores => {
+        distribuidores.sort((a, b) => a.pais.localeCompare(b.pais));
+        const container = document.getElementById('cards');
+        distribuidores.forEach(d => {
+          const card = document.createElement('div');
+          card.className = 'card';
+          card.innerHTML = `
+            <h3>${d.pais}</h3>
+            <p><strong>${d.nombre}</strong><br>${d.direccion}</p>
+            <p><strong>Teléfonos:</strong><br>${d.telefonos.join('<br>')}</p>
+            <p><strong>Email:</strong> <a href="mailto:${d.email}">${d.email}</a></p>
+              <p><strong>WhatsApp:</strong> <a href="https://wa.me/${d.whatsapp.replace(/\D/g,'')}" target="_blank">${d.whatsapp}</a></p>
+          `;
+          container.appendChild(card);
+        });
+      });
+  </script>
+</body>
+</html>

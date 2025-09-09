@@ -1,0 +1,26 @@
+[
+  {
+    "pais": "Colombia",
+    "nombre": "Semillas Andinas",
+    "direccion": "Calle 123 #45-67, Bogotá",
+    "telefonos": ["+57 1 234 5678", "+57 300 123 4567"],
+    "email": "ventas@semillasandinas.co",
+    "whatsapp": "+57 300 123 4567"
+  },
+  {
+    "pais": "Costa Rica",
+    "nombre": "Forestal Tico",
+    "direccion": "San José, Costa Rica",
+    "telefonos": ["+506 8888 8888"],
+    "email": "info@forestaltico.cr",
+    "whatsapp": "+506 8888 8888"
+  },
+  {
+    "pais": "México",
+    "nombre": "VerdeMex",
+    "direccion": "Av. Reforma 100, Ciudad de México",
+    "telefonos": ["+52 55 1234 5678"],
+    "email": "contacto@verdemex.mx",
+    "whatsapp": "+52 1 55 1234 5678"
+  }
+]
