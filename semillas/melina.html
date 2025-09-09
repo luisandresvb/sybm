@@ -36,6 +36,11 @@
     table{width:100%;border-collapse:collapse;font-size:.95rem;table-layout:fixed;margin-top:12px}
     th,td{padding:10px 12px;text-align:left;word-break:break-word}
     tbody tr{border-top:1px solid #e2e8f0}
+    #filter{padding:8px 12px;border:1px solid #e2e8f0;border-radius:8px;width:100%;max-width:300px}
+    #print-btn{margin-top:12px;padding:8px 12px;border:none;border-radius:8px;background:var(--brand);color:#fff;font-weight:600;cursor:pointer}
+    #print-btn:hover{filter:brightness(.95)}
+    #lotes-table th{cursor:pointer}
+    @media print{.header,.footer,.floating-buttons,#filter-wrapper,#print-btn{display:none}section{padding:0}}
     footer{border-top:1px solid #e2e8f0;background:#fff}
     .footer{display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:space-between}
     @media(min-width:768px){.footer{flex-direction:row}}
@@ -126,6 +131,15 @@
     </div>
   </section>
 
+  <section class="fade-in" id="lotes">
+    <div class="container">
+      <h2>Lotes disponibles</h2>
+      <div id="filter-wrapper" style="margin-bottom:12px"><input type="search" id="filter" placeholder="Filtrar..." /></div>
+      <div style="overflow:auto"><table id="lotes-table"></table></div>
+      <button id="print-btn">Descargar ficha del lote (PDF)</button>
+    </div>
+  </section>
+
   <section class="fade-in" id="protocolos">
     <div class="container">
       <h2>Protocolos de pre-germinación</h2>
@@ -197,6 +211,60 @@
       if (open) { mobile.setAttribute('hidden',''); btn.setAttribute('aria-expanded','false'); }
       else { mobile.removeAttribute('hidden'); btn.setAttribute('aria-expanded','true'); }
     });
+    const lotesTable = document.getElementById('lotes-table');
+    const filterInput = document.getElementById('filter');
+    let lotesData = [];
+    const parseCSV = text => {
+      const [header, ...rows] = text.trim().split(/\r?\n/);
+      const keys = header.split(',');
+      return rows.map(r => {
+        const vals = r.split(',');
+        return Object.fromEntries(keys.map((k,i)=>[k, vals[i] ?? '']));
+      });
+    };
+    const renderBody = data => {
+      lotesTable.querySelector('tbody')?.remove();
+      const tbody = new DocumentFragment();
+      data.forEach(row => {
+        const tr = document.createElement('tr');
+        Object.values(row).forEach(v => {
+          const td = document.createElement('td');
+          td.textContent = v;
+          tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+      });
+      const bodyEl = document.createElement('tbody');
+      bodyEl.appendChild(tbody);
+      lotesTable.appendChild(bodyEl);
+    };
+    const buildTable = data => {
+      const headers = Object.keys(data[0]);
+      const thead = document.createElement('thead');
+      const tr = document.createElement('tr');
+      headers.forEach(h => {
+        const th = document.createElement('th');
+        th.textContent = h.replace(/_/g,' ');
+        th.dataset.key = h;
+        let asc = true;
+        th.addEventListener('click', () => {
+          data.sort((a,b)=>a[h].localeCompare(b[h], undefined,{numeric:true,sensitivity:'base'})*(asc?1:-1));
+          asc = !asc;
+          renderBody(data);
+        });
+        tr.appendChild(th);
+      });
+      thead.appendChild(tr);
+      lotesTable.appendChild(thead);
+      renderBody(data);
+    };
+    fetch('../data/lotes-melina.csv').then(r=>r.text()).then(t=>{lotesData=parseCSV(t);buildTable(lotesData);});
+    filterInput.addEventListener('input', e => {
+      const term = e.target.value.toLowerCase();
+      const filtered = lotesData.filter(row => Object.values(row).some(v => v.toLowerCase().includes(term)));
+      renderBody(filtered);
+    });
+    document.getElementById('print-btn').addEventListener('click', () => window.print());
   </script>
 </body>
 </html>
