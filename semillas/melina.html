@@ -19,7 +19,7 @@
     .header{position:sticky;top:0;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid #e2e8f0;z-index:100}
     .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
     .brand{display:flex;align-items:center;gap:12px}
-    .brand-mark{width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--brand-2));box-shadow:0 1px 3px rgba(16,24,40,.1)}
+    .brand-logo{width:56px;height:56px;border-radius:16px;object-fit:contain;background:#fff;border:1px solid #e2e8f0;padding:2px}
     .nav-links{display:none;gap:20px;align-items:center}
     .nav-links details{position:relative}
     .nav-links summary{list-style:none;cursor:pointer}
@@ -61,7 +61,7 @@
   <header class="header">
     <div class="container nav">
       <a href="../" class="brand" aria-label="Inicio">
-        <span class="brand-mark"></span>
+        <img class="brand-logo" src="../img/Logo-SBM.png" alt="Logo Semillas y Bosques" onerror="this.onerror=()=>{this.src='https://semillasybosques.com/favicon.ico'}; this.src='https://semillasybosques.com/logo.png';"/>
         <strong>Semillas y Bosques</strong>
       </a>
       <nav class="nav-links" id="nav-links">
