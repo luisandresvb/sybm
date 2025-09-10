@@ -19,7 +19,7 @@
     .header{position:sticky;top:0;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid #e2e8f0;z-index:100}
     .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
     .brand{display:flex;align-items:center;gap:12px}
-    .brand-logo{width:56px;height:56px;border-radius:0;object-fit:contain;background:#fff;border:1px solid #e2e8f0;padding:2px}
+      .brand-logo{width:56px;height:56px;border-radius:0;object-fit:contain;background:#fff;border:none;padding:2px}
     .nav-links{display:none;gap:20px;align-items:center}
     .nav-links details{position:relative}
     .nav-links summary{list-style:none;cursor:pointer}
@@ -47,23 +47,23 @@
     #lotes-table th{cursor:pointer}
     @media print{.header,.footer,.floating-buttons,#filter-wrapper,#print-btn{display:none}section{padding:0}}
     footer{border-top:1px solid #e2e8f0;background:#fff}
-    .footer{display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:space-between}
-    @media(min-width:768px){.footer{flex-direction:row}}
-    .floating-buttons{position:fixed;right:20px;bottom:24px;z-index:400;display:flex;flex-direction:column;gap:14px}
-    .floating-btn{width:46px;height:46px;border-radius:50%;box-shadow:0 2px 8px rgba(16,24,40,.18);display:flex;align-items:center;justify-content:center;background:#fff;border:none;cursor:pointer;transition:box-shadow .2s;border:2px solid #e2e8f0}
-    .floating-btn:hover{box-shadow:0 4px 16px rgba(16,24,40,.22);background:#f0fdf4}
-    .floating-btn.whatsapp{background:#25d366;border:none;width:auto;height:auto;padding:10px 16px;border-radius:999px;gap:8px;color:#fff;font-weight:600}
-    .floating-btn.whatsapp:hover{background:#1ebe5d}
-    .floating-btn.whatsapp svg{width:24px;height:24px;display:block}
+      .footer{display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:space-between}
+      .floating-buttons{position:fixed;right:20px;bottom:24px;z-index:400;display:flex;flex-direction:column;gap:14px}
+      .floating-btn{width:46px;height:46px;border-radius:50%;box-shadow:0 2px 8px rgba(16,24,40,.18);display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid #e2e8f0;cursor:pointer;transition:box-shadow .2s}
+      .floating-btn:hover{box-shadow:0 4px 16px rgba(16,24,40,.22);background:#f0fdf4}
+      .floating-btn svg{width:24px;height:24px;display:block}
   </style>
 </head>
 <body>
   <header class="header">
     <div class="container nav">
-      <a href="../" class="brand" aria-label="Inicio">
-        <img class="brand-logo" src="../img/Logo-SBM.png" alt="Logo Semillas y Bosques" onerror="this.onerror=()=>{this.src='https://semillasybosques.com/favicon.ico'}; this.src='https://semillasybosques.com/logo.png';"/>
-        <strong>Semillas y Bosques</strong>
-      </a>
+        <a href="../" class="brand" aria-label="Inicio">
+          <img class="brand-logo" src="../img/Logo-SBM.png" alt="Logo Semillas y Bosques" onerror="this.onerror=()=>{this.src='https://semillasybosques.com/favicon.ico'}; this.src='https://semillasybosques.com/logo.png';"/>
+          <span>
+            <strong>Semillas y Bosques</strong>
+            <div class="muted" style="font-size:.8rem">Mejorados S.A.</div>
+          </span>
+        </a>
       <nav class="nav-links" id="nav-links">
         <a href="../#nosotros">Nosotros</a>
         <details>
@@ -187,8 +187,7 @@
   </section>
 
   <footer>
-    <div class="container footer" style="padding:24px 0">
-      <small class="muted">© <span id="year"></span> Semillas y Bosques Mejorados S.A. Todos los derechos reservados.</small>
+      <div class="container footer" style="padding:24px 0">
         <nav class="stack">
           <a href="../#nosotros">Nosotros</a>
           <a href="teca.html">Semillas</a>
@@ -200,15 +199,18 @@
           <a href="../faq/">FAQ</a>
           <a href="../#contacto">Contacto</a>
         </nav>
-    </div>
-  </footer>
+        <small class="muted">© <span id="year"></span> Semillas y Bosques Mejorados S.A. Todos los derechos reservados.</small>
+      </div>
+    </footer>
 
-  <div class="floating-buttons">
-    <a href="https://wa.me/50688687842" class="floating-btn whatsapp" target="_blank" aria-label="WhatsApp">
-      <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="16" fill="#25d366"/><path d="M16 6.5A9.5 9.5 0 0 0 7.1 20.1l-1 3.7a1 1 0 0 0 1.2 1.2l3.7-1A9.5 9.5 0 1 0 16 6.5Zm-7.2 17.2.7-2.6a1 1 0 0 1 .6-.7A7.5 7.5 0 1 1 16 23.5a7.4 7.4 0 0 1-3.7-1l-.7-.3-2.6.7Zm10.7-5.2c-.2-.1-1.2-.6-1.4-.7-.2-.1-.3-.1-.5.1-.1.1-.5.7-.6.8-.1.1-.2.2-.4.1-.2-.1-.8-.3-1.5-.9-.5-.5-.9-1.1-1-1.3-.1-.2 0-.3.1-.4.1-.1.2-.2.3-.3.1-.1.1-.2.2-.3.1-.1.1-.2.2-.3.1-.1.1-.2.1-.3 0-.1 0-.2-.1-.3-.1-.1-.5-1.2-.7-1.6-.2-.4-.4-.3-.5-.3h-.4c-.1 0-.3 0-.4.2-.1.2-.5.5-.5 1.2 0 .7.5 1.4.6 1.5.1.1 1.1 1.7 2.7 2.3 1.6.6 1.6.4 1.9.4.3 0 .9-.4 1-.8.1-.4.1-.7.1-.8 0-.1-.1-.1-.2-.2Z" fill="#fff"/></svg>
-      <span>Solicitar cotización / WhatsApp</span>
-    </a>
-  </div>
+    <div class="floating-buttons">
+      <a href="../#contacto" class="floating-btn" aria-label="Correo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2" ry="2"/><polyline points="3,7 12,13 21,7"/></svg>
+      </a>
+      <a href="https://wa.me/50688687842" class="floating-btn" target="_blank" aria-label="WhatsApp">
+        <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="16" fill="#25d366"/><path d="M16 6.5A9.5 9.5 0 0 0 7.1 20.1l-1 3.7a1 1 0 0 0 1.2 1.2l3.7-1A9.5 9.5 0 1 0 16 6.5Zm-7.2 17.2.7-2.6a1 1 0 0 1 .6-.7A7.5 7.5 0 1 1 16 23.5a7.4 7.4 0 0 1-3.7-1l-.7-.3-2.6.7Zm10.7-5.2c-.2-.1-1.2-.6-1.4-.7-.2-.1-.3-.1-.5.1-.1.1-.5.7-.6.8-.1.1-.2.2-.4.1-.2-.1-.8-.3-1.5-.9-.5-.5-.9-1.1-1-1.3-.1-.2 0-.3.1-.4.1-.1.2-.2.3-.3.1-.1.1-.2.2-.3.1-.1.1-.2.2-.3.1-.1.1-.2.1-.3 0-.1 0-.2-.1-.3-.1-.1-.5-1.2-.7-1.6-.2-.4-.4-.3-.5-.3h-.4c-.1 0-.3 0-.4.2-.1.2-.5.5-.5 1.2 0 .7.5 1.4.6 1.5.1.1 1.1 1.7 2.7 2.3 1.6.6 1.6.4 1.9.4.3 0 .9-.4 1-.8.1-.4.1-.7.1-.8 0-.1-.1-.1-.2-.2Z" fill="#fff"/></svg>
+      </a>
+    </div>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
