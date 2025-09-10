@@ -108,15 +108,75 @@
         <a href="melina.html">Melina</a>
         <a href="otras-especies.html">Otras especies</a>
       </div>
-      <input type="text" id="filtro" placeholder="Filtrar..." style="margin:20px 0;padding:8px 10px;width:100%;max-width:320px;border:1px solid #e2e8f0;border-radius:8px"/>
-      <div style="overflow-x:auto">
-        <table id="tabla-especies">
+      <h2>Semillas de otras especies</h2>
+      <!-- LISTA-DISPONIBLE (inicio) -->
+      <style>
+        .sybm-tabla-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+        .sybm-tabla{width:100%;border-collapse:collapse;font-size:clamp(12px,1.6vw,16px)}
+        .sybm-tabla caption{text-align:left;font-weight:600;margin:.5rem 0}
+        .sybm-tabla th,.sybm-tabla td{border:1px solid #ddd;padding:.5rem;vertical-align:top;word-wrap:break-word}
+        @media (prefers-color-scheme: dark){
+          .sybm-tabla th,.sybm-tabla td{border-color:#444}
+        }
+      </style>
+      <div class="sybm-tabla-scroll">
+        <table class="sybm-tabla">
+          <caption>Semillas de otras especies</caption>
           <thead>
-            <tr><th>Nombre común</th><th>Nombre científico</th><th>Tipo de fuente</th><th>Semillas/kg</th></tr>
+            <tr><th scope="col">NOMBRE COMÚN</th><th scope="col">NOMBRE CIENTÍFICO</th><th scope="col">TIPO DE FUENTE</th><th scope="col">SEMILLAS VIABLESPOR KG *</th></tr>
           </thead>
-          <tbody></tbody>
+          <tbody>
+            <tr><td>Acacia</td><td><em>Acacia mangium</em></td><td>FI – RS</td><td>74.714</td></tr>
+            <tr><td>Cedro rosado</td><td><em>Acrocarpus fraxinifolius</em></td><td>FI</td><td>16.393</td></tr>
+            <tr><td>Ron Ron</td><td><em>Astronium graveolens</em></td><td>FI</td><td>28.338</td></tr>
+            <tr><td>Pochote</td><td><em>Bombacopsis quinata</em></td><td>FI – HS</td><td>29.714</td></tr>
+            <tr><td>Cedro amargo</td><td><em>Cedrela odorata</em></td><td>FI</td><td>63.653</td></tr>
+            <tr><td>Laurel</td><td><em>Cordia alliodora</em></td><td>FI</td><td>59.145</td></tr>
+            <tr><td>Cocobolo</td><td><em>Dalbergia retusa</em></td><td>FI</td><td>3.772</td></tr>
+            <tr><td>Malinche</td><td><em>Delonix regia</em></td><td>FI</td><td>1.683</td></tr>
+            <tr><td>Guanacaste</td><td><em>Enterolobium cyclocarpum</em></td><td>FI</td><td>1.455</td></tr>
+            <tr><td>Camaldulensis</td><td><em>Eucalyptus camaldulensis</em></td><td>HS</td><td>932.000</td></tr>
+            <tr><td>Citriodora</td><td><em>Eucalyptus citriodora</em></td><td>FI – HS</td><td>173.000</td></tr>
+            <tr><td>Deglupta</td><td><em>Eucalyptus deglupta</em></td><td>FI</td><td>631.000</td></tr>
+            <tr><td>Glóbulos</td><td><em>Eucalyptus glubulos</em></td><td>FI</td><td>241.000</td></tr>
+            <tr><td>Grandis</td><td><em>Eucalyptus grandis</em></td><td>AS – HS</td><td>230.000</td></tr>
+            <tr><td>Saligna</td><td><em>Eucalyptus saligna</em></td><td>FI</td><td>186.000</td></tr>
+            <tr><td>Tereticornis</td><td><em>Eucalyptus tereticornis</em></td><td>HS</td><td>418.000</td></tr>
+            <tr><td>Urugrandis</td><td><em>Eucalyptus urugrandis</em></td><td>HS</td><td>568.000</td></tr>
+            <tr><td>Madero negro</td><td><em>Gliricidia sepium</em></td><td>FI</td><td>7.193</td></tr>
+            <tr><td>Melina</td><td><em>Gmelina arborea</em></td><td>RS - HS</td><td>1.293</td></tr>
+            <tr><td>Guapinol</td><td><em>Hymenea courbaril</em></td><td>FI</td><td>280</td></tr>
+            <tr><td>Tempate</td><td><em>Jatropha curcas</em></td><td>FI</td><td>4.200</td></tr>
+          </tbody>
         </table>
       </div>
+      <div class="sybm-tabla-scroll">
+        <table class="sybm-tabla">
+          <caption>Semillas de otras especies</caption>
+          <thead>
+            <tr><th scope="col">NOMBRE COMÚN</th><th scope="col">NOMBRE CIENTÍFICO</th><th scope="col">TIPO DE FUENTE</th><th scope="col">SEMILLAS VIABLES POR KG *</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Caoba africana</td><td><em>Khaya senegalensis</em></td><td>FS</td><td>3.360</td></tr>
+            <tr><td>Caoba africana</td><td><em>Khaya anthoteca</em></td><td>FS</td><td>3.300</td></tr>
+            <tr><td>Leucaena</td><td><em>Leucaena leucocephala</em></td><td>FI</td><td>17.226</td></tr>
+            <tr><td>Pino caribe</td><td><em>Pinus caribaea var hondurensis</em></td><td>FS</td><td>43.634</td></tr>
+            <tr><td>Pino ocote</td><td><em>Pinus oocarpa</em></td><td>FI</td><td>45.091</td></tr>
+            <tr><td>Pino rojo</td><td><em>Pinus tecunumanii</em></td><td>FS</td><td>35.396</td></tr>
+            <tr><td>Cenízaro</td><td><em>Samanea saman</em></td><td>FI</td><td>4.627</td></tr>
+            <tr><td>Gallinazo</td><td><em>Schyzolobium parahyba</em></td><td>FI</td><td>1131</td></tr>
+            <tr><td>Caoba</td><td><em>Swietenia humilis</em></td><td>FI</td><td>1.784</td></tr>
+            <tr><td>Caoba</td><td><em>Swietenia macrophylla</em></td><td>FI</td><td>2.141</td></tr>
+            <tr><td>Swinglia</td><td><em>Swinglia glutinosa</em></td><td>FI</td><td>29.761</td></tr>
+            <tr><td>Cortez negro</td><td><em>Tabebuia impetiginosa</em></td><td>FI</td><td>10.226</td></tr>
+            <tr><td>Cortez amarillo</td><td><em>Tabebuia ochracea</em></td><td>FI</td><td>48.450</td></tr>
+            <tr><td>Roble de sabana</td><td><em>Tabebuia rosea</em></td><td>FI</td><td>36.335</td></tr>
+            <tr><td>Teca pretratada</td><td><em>Tectona grandis</em></td><td>RS</td><td>1.264</td></tr>
+            <tr><td>Chancho blanco**</td><td><em>Vochysia guatemalensis</em></td><td>FI</td><td>6.789 </td></tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- LISTA-DISPONIBLE (fin) -->
       <a class="btn cta" href="../#contacto" style="display:inline-flex;margin-top:24px">Solicitar disponibilidad</a>
     </div>
   </section>
@@ -146,29 +206,6 @@
     </div>
 
   <script>
-    async function cargarEspecies(){
-      try{
-        const resp = await fetch('../data/especies.csv');
-        const texto = await resp.text();
-        const filas = texto.trim().split('\n').slice(1).map(l=>l.split(','));
-        const tbody = document.querySelector('#tabla-especies tbody');
-        filas.forEach(cols=>{
-          const tr = document.createElement('tr');
-          tr.innerHTML = `<td>${cols[0]}</td><td><em>${cols[1]}</em></td><td>${cols[2]}</td><td>${cols[3]||''}</td>`;
-          tbody.appendChild(tr);
-        });
-      }catch(e){
-        console.error('No se pudo cargar el CSV',e);
-      }
-    }
-    cargarEspecies();
-    const filtro = document.getElementById('filtro');
-    filtro.addEventListener('input', () => {
-      const val = filtro.value.toLowerCase();
-      document.querySelectorAll('#tabla-especies tbody tr').forEach(tr => {
-        tr.style.display = tr.textContent.toLowerCase().includes(val) ? '' : 'none';
-      });
-    });
     document.getElementById('year').textContent = new Date().getFullYear();
     const btn = document.getElementById('menu-btn');
     const mobile = document.getElementById('mobile');
