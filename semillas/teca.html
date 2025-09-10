@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Semilla certificada de Teca — Semillas y Bosques Mejorados S.A.</title>
   <meta name="description" content="Semilla certificada de teca con respaldo técnico y logístico." />
   <meta name="theme-color" content="#10b981" />
@@ -52,6 +52,22 @@
       .floating-btn{width:46px;height:46px;border-radius:50%;box-shadow:0 2px 8px rgba(16,24,40,.18);display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid #e2e8f0;cursor:pointer;transition:box-shadow .2s}
       .floating-btn:hover{box-shadow:0 4px 16px rgba(16,24,40,.22);background:#f0fdf4}
       .floating-btn svg{width:24px;height:24px;display:block}
+      .teca-page { display:block; gap:1rem; }
+      .teca-page h2 { font-size:1.6rem; margin:0 0 .5rem; }
+      .teca-page h3 { font-size:1.1rem; margin:1rem 0 .25rem; }
+      .table-scroll { overflow-x:auto; }
+      .tabla-financiera { width:100%; border-collapse:collapse; }
+      .tabla-financiera th, .tabla-financiera td { border:1px solid #ddd; padding:.5rem; text-align:left; }
+      .tabla-financiera th { background:#f4f4f4; }
+      .teca-cta { margin-top:1rem; }
+      .teca-cta .btn {
+        display:inline-block; padding:.6rem 1rem; border-radius:.375rem;
+        background:#39481E; color:#fff; text-decoration:none;
+      }
+      @media (max-width:600px){
+        .teca-page h2 { font-size:1.35rem; }
+        .teca-page h3 { font-size:1rem; }
+      }
   </style>
 </head>
 <body>
@@ -104,82 +120,99 @@
     </div>
   </header>
 
-  <section class="fade-in">
-    <div class="container">
-      <h1>Semilla certificada de Teca</h1>
-      <img src="../img/Frutos%20teca%20recien%20escarificados%20gen.png" alt="Frutos de teca escarificados" style="border-radius:12px;object-fit:cover;aspect-ratio:16/9;border:1px solid #e2e8f0;margin-top:20px"/>
-      <div class="stack" style="margin-top:16px">
-        <a href="teca.html">Teca</a> -
-        <a href="melina.html">Melina</a> - 
-        <a href="otras-especies.html">Otras especies</a>
+  <section class="teca-page">
+    <h2>Semilla de teca Certificada y Escarificada</h2>
+
+    <article class="teca-intro">
+      <h3>¿Por qué plantaciones comerciales de teca?</h3>
+      <p>
+        Con la prohibición de la exportación de trozas de teca en los 90 por la sobre explotación de los
+        25 millones de hectáreas en bosques naturales ubicados en Myamar, India, Tailandia y Laos,
+        algunos de estos países pasan de ser exportadores a importadores.
+      </p>
+      <p>
+        Introducida desde 1926 a América Central, la teca se ha convertido en la especie más plantada debido al alto valor de su madera:
+        alrededor de 2 500 US$/m³ para diámetros arriba de 80 cm en trozas de bosque natural y
+        ~600–700 US$/m³ en trozas de plantaciones arriba de 40 cm de diámetro promedio.
+      </p>
+    </article>
+
+    <article class="teca-rentabilidad">
+      <h3>Rentabilidad estimada por clase de sitio (Pérez, 2005)</h3>
+      <p>Turno: 20 años. VAN expresado a 5% y 10%; TIR en %.</p>
+
+      <div class="table-scroll">
+        <table class="tabla-financiera">
+          <thead>
+            <tr>
+              <th>Clase Sitio</th>
+              <th>Objetivo</th>
+              <th>Turno (años)</th>
+              <th>VAN 5%</th>
+              <th>VAN 10%</th>
+              <th>TIR %</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>I</td>
+              <td>Max. DAP</td>
+              <td>20</td>
+              <td>44 188</td>
+              <td>10 017</td>
+              <td>23,4</td>
+            </tr>
+            <tr>
+              <td>II</td>
+              <td>Max. DAP</td>
+              <td>20</td>
+              <td>18 858</td>
+              <td>5 856</td>
+              <td>16,5</td>
+            </tr>
+            <tr>
+              <td>III</td>
+              <td>Max. DAP</td>
+              <td>20</td>
+              <td>3 892</td>
+              <td>−722</td>
+              <td>8,8</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-    </div>
-  </section>
+    </article>
 
-  <section class="section-muted fade-in" id="fuente">
-    <div class="container">
-      <h2>Fuente semillera (RS/HS)</h2>
-      <p>Semilla obtenida de redes de semilleros registrados (RS) y huertos semilleros (HS) con selección genética para productividad y adaptación.</p>
-    </div>
-  </section>
+    <article class="teca-germinacion">
+      <h3>Germinación y escarificación</h3>
+      <p>
+        Históricamente la germinación de los frutos de teca fue baja (25–35%) y esporádica.
+        El retiro del cáliz y del corcho (mesocarpo) en frutos recién colectados facilita el ingreso de agua al embrión
+        y mejora la germinación.
+      </p>
+    </article>
 
-  <section class="fade-in" id="calidad">
-    <div class="container">
-      <h2>Calidad física</h2>
-      <table>
-        <tbody>
-          <tr><th>Pureza</th><td>≥ 96&nbsp;%</td></tr>
-          <tr><th>Peso de mil semillas (PMS)</th><td>≈ 4.5&nbsp;g</td></tr>
-          <tr><th>% germinación</th><td>≥ 70&nbsp;%</td></tr>
-          <tr><th>Humedad</th><td>8&nbsp;%</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <section class="section-muted fade-in" id="opciones">
-    <div class="container">
-      <h2>Opciones</h2>
-      <p>Disponibilidad en dos presentaciones:</p>
-      <ul class="list">
-        <li>Escarificada: lista para siembra con germinación acelerada.</li>
-        <li>Natural: sin tratamiento, adecuada para almacenamiento prolongado.</li>
+    <article class="teca-ventajas">
+      <h3>Ventajas de la semilla escarificada</h3>
+      <ul>
+        <li>Aumento de frutos por kilo: de 900 hasta 1 800 frutos/kg.</li>
+        <li>Germinación: de 35–45% y hasta 80% con semilla almacenada.</li>
+        <li>Mayor homogeneidad y menor tiempo de germinación.</li>
+        <li>Plantas útiles por kilo: hasta 1 500 (vs. 300–400 con corcho).</li>
+        <li>25–30% menos peso en transporte (al retirar el corcho).</li>
       </ul>
-    </div>
-  </section>
+    </article>
 
-  <section class="fade-in" id="lotes">
-    <div class="container">
-      <h2>Lotes disponibles</h2>
-      <div id="filter-wrapper" style="margin-bottom:12px"><input type="search" id="filter" placeholder="Filtrar..." /></div>
-      <div style="overflow:auto"><table id="lotes-table"></table></div>
-      <button id="print-btn">Descargar ficha del lote (PDF)</button>
-    </div>
-  </section>
+    <article class="teca-fuentes">
+      <h3>Fuentes semilleras disponibles</h3>
+      <p>
+        Semillas y Bosques Mejorados S.A. pone a su disposición más de 10 rodales semilleros autorizados por la Oficina Nacional de Semillas (ONS) de Costa Rica, en diferentes condiciones de sitio.
+      </p>
+    </article>
 
-  <section class="fade-in" id="protocolos">
-    <div class="container">
-      <h2>Protocolos de pre-germinación</h2>
-      <ol style="margin-left:20px;line-height:1.6">
-        <li>Remojar en agua a 80–90&nbsp;°C durante 30&nbsp;min.</li>
-        <li>Dejar en agua a temperatura ambiente por 24&nbsp;h.</li>
-        <li>Sembrar en sustrato húmedo y sombreado.</li>
-      </ol>
-    </div>
-  </section>
-
-  <section class="section-muted fade-in" id="faq">
-    <div class="container">
-      <h2>Preguntas frecuentes</h2>
-      <details>
-        <summary>¿Cuánto tiempo se puede almacenar la semilla?</summary>
-        <p>En condiciones frescas y secas puede conservarse hasta 24&nbsp;meses sin perder viabilidad.</p>
-      </details>
-      <details>
-        <summary>¿La semilla escarificada requiere tratamiento adicional?</summary>
-        <p>No, está lista para siembra tras un breve remojo.</p>
-      </details>
-    </div>
+    <aside class="teca-cta">
+      <a class="btn" href="contactenos.html">¿Dudas? Escríbanos</a>
+    </aside>
   </section>
 
   <footer>
@@ -228,58 +261,6 @@
       if (open) { mobile.setAttribute('hidden',''); btn.setAttribute('aria-expanded','false'); }
       else { mobile.removeAttribute('hidden'); btn.setAttribute('aria-expanded','true'); }
     });
-    const lotesTable = document.getElementById('lotes-table');
-    const filterInput = document.getElementById('filter');
-    let lotesData = [];
-    const parseCSV = text => {
-      const [header, ...rows] = text.trim().split(/\r?\n/);
-      const keys = header.split(',');
-      return rows.map(r => {
-        const vals = r.split(',');
-        return Object.fromEntries(keys.map((k,i)=>[k, vals[i] ?? '']));
-      });
-    };
-    const renderBody = data => {
-      lotesTable.querySelector('tbody')?.remove();
-      const tbody = document.createElement('tbody');
-      data.forEach(row => {
-        const tr = document.createElement('tr');
-        Object.values(row).forEach(v => {
-          const td = document.createElement('td');
-          td.textContent = v;
-          tr.appendChild(td);
-        });
-        tbody.appendChild(tr);
-      });
-      lotesTable.appendChild(tbody);
-    };
-    const buildTable = data => {
-      const headers = Object.keys(data[0]);
-      const thead = document.createElement('thead');
-      const tr = document.createElement('tr');
-      headers.forEach(h => {
-        const th = document.createElement('th');
-        th.textContent = h.replace(/_/g,' ');
-        th.dataset.key = h;
-        let asc = true;
-        th.addEventListener('click', () => {
-          data.sort((a,b)=>a[h].localeCompare(b[h], undefined,{numeric:true,sensitivity:'base'})*(asc?1:-1));
-          asc = !asc;
-          renderBody(data);
-        });
-        tr.appendChild(th);
-      });
-      thead.appendChild(tr);
-      lotesTable.appendChild(thead);
-      renderBody(data);
-    };
-    fetch('../data/lotes-teca.csv').then(r=>r.text()).then(t=>{lotesData=parseCSV(t);buildTable(lotesData);});
-    filterInput.addEventListener('input', e => {
-      const term = e.target.value.toLowerCase();
-      const filtered = lotesData.filter(row => Object.values(row).some(v => v.toLowerCase().includes(term)));
-      renderBody(filtered);
-    });
-    document.getElementById('print-btn').addEventListener('click', () => window.print());
   </script>
 </body>
 </html>
